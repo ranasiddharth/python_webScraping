@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get("https://m.facebook.com/anshul.d.sharma.7/about")
+driver.get("https://m.facebook.com/radhikagarg1601/about")
 print("Opened facebook")
 sleep(1)
 
@@ -52,9 +52,12 @@ while True:
 time.sleep(2)
 
 likes_list = driver.find_elements(By.XPATH, '/html/body/div[1]/div[1]/div[4]/div/div[1]/div/div[2]/div[11]/div/div/div/div/div/div/div/div[*]/div/span')
+likes_list2 = driver.find_elements(By.XPATH, '/html/body/div[1]/div[1]/div[4]/div/div[1]/div/div[2]/div[12]/div/div/div/div/div/div/div/div[*]/div/span')
 fav = []
 # print(likes_list)
 for elem in likes_list:
+    fav.append(elem.text)
+for elem in likes_list2:
     fav.append(elem.text)
 print("Favourites of this user are: ")
 print(fav)
